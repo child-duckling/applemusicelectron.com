@@ -11,19 +11,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
         var id = new URL(window.location.href).searchParams.get('id')
-
+        console.log(`Opening ame://${id}`)
         window.location.href = "ame://" + id;
         setTimeout(() => {
-            window.location.href = 'https://applemusicelectron.com';
-        }, 1000);
+            window.location.href = 'https://applemusicelectron.com/?redirected=true&link=' + id; //For future purposes, if needed
+        }, 10000);
         </script>
     </head>
 </html>
